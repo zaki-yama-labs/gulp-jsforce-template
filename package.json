@@ -1,0 +1,16 @@
+{
+  "name": "gulp-jsforce-scaffold",
+  "version": "1.0.0",
+  "description": "A template for force.com development using JSforce and gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jsforce-deploy": "^1.1.1",
+    "gulp-zip": "^3.0.2"
+  }
+}
