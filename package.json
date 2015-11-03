@@ -12,6 +12,7 @@
     "gulp": "^3.9.0",
     "gulp-env": "^0.2.0",
     "gulp-jsforce-deploy": "^1.1.1",
-    "gulp-zip": "^3.0.2"
+    "gulp-zip": "^3.0.2",
+    "minimist": "^1.2.0"
   }
 }

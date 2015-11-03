@@ -2,10 +2,26 @@ var gulp = require('gulp');
 var zip = require('gulp-zip');
 var forceDeploy = require('gulp-jsforce-deploy');
 var env = require('gulp-env');
+var minimist = require('minimist');
 
+var DEFAULT_ENV = '.envs/.env.json';
+
+/*
+ * Enable to switch the environment (the org to deploy) by passing arguments `--env PATH`
+ * ref. https://github.com/gulpjs/gulp/blob/master/docs/recipes/pass-arguments-from-cli.md
+ */
+var knownOptions = {
+  string: 'env',
+  default: { env: process.env.NODE_ENV || DEFAULT_ENV }
+};
+var options = minimist(process.argv.slice(2), knownOptions);
+
+/*
+ * set env vars from file
+ */
 gulp.task('set-env', function() {
   env({
-    file: ".env.json"
+    file: options.env,
   });
 });
 
