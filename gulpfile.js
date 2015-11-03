@@ -10,7 +10,7 @@ gulp.task('set-env', function() {
 });
 
 gulp.task('deploy', function() {
-  gulp.src('./pkg/**', { base: "." })
+  var res = gulp.src('./pkg/**', { base: "." })
     .pipe(zip('pkg.zip'))
     .pipe(forceDeploy({
       username: process.env.SF_USERNAME,
@@ -20,6 +20,10 @@ gulp.task('deploy', function() {
       //, pollInterval: 10*1000
       //, version: '33.0'
     }));
+
+  res.on('error', function(err) {
+    console.log(err);
+  });
 });
 
 gulp.task('default', ['set-env', 'deploy']);
