@@ -1,5 +1,5 @@
 {
-  "name": "gulp-jsforce-scaffold",
+  "name": "gulp-jsforce-starter",
   "version": "1.0.0",
   "description": "A template for force.com development using JSforce and gulp",
   "main": "index.js",
