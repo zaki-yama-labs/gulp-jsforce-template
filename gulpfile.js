@@ -1,6 +1,13 @@
 var gulp = require('gulp');
 var zip = require('gulp-zip');
 var forceDeploy = require('gulp-jsforce-deploy');
+var env = require('gulp-env');
+
+gulp.task('set-env', function() {
+  env({
+    file: ".env.json"
+  });
+});
 
 gulp.task('deploy', function() {
   gulp.src('./pkg/**', { base: "." })
@@ -14,3 +21,5 @@ gulp.task('deploy', function() {
       //, version: '33.0'
     }));
 });
+
+gulp.task('default', ['set-env', 'deploy']);
